@@ -26,4 +26,7 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - run: ./run.sh
+      - name: print to stdout/stderr
+        run: ./run.sh
+      - name: redirect and cat
+        run: ./run.sh > out.log 2>&1 && cat out.log
